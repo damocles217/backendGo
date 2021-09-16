@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  golangService:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: socialbackend:latest
+    container_name: socialbackend
+    volumes:
+      - ./:/usr/app/
+    ports:
+      - "32147:32147"
+    restart: always
+    stdin_open: true
+    logging:
+      driver: none
